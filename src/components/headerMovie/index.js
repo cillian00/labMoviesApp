@@ -31,7 +31,7 @@ const MovieHeader = (props) => {
       </IconButton>
 
 {
-movie.id = favouriteMovies.id
+favouriteMovies
  ? 
  (
 <Avatar sx={{ backgroundColor: 'red' }}>
