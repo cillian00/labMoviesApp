@@ -4,10 +4,16 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Paper from "@mui/material/Paper";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import HomeIcon from "@mui/icons-material/Home";
 
 const MovieHeader = (props) => {
   const movie = props.movie;
+  const favouriteMovies = JSON.parse(localStorage.getItem("favourites")); 
+
+  const showList = true
+
 
   return (
     <Paper 
@@ -23,6 +29,23 @@ const MovieHeader = (props) => {
       <IconButton aria-label="go back">
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
+
+{
+movie.id = favouriteMovies.id
+ ? 
+ (
+<Avatar sx={{ backgroundColor: 'red' }}>
+<FavoriteIcon />
+</Avatar>
+ ) : (
+
+  <Avatar sx={{ backgroundColor: 'blue' }}>
+<FavoriteIcon />
+</Avatar>
+
+ )
+
+ }
 
       <Typography variant="h4" component="h3">
         {movie.title}
