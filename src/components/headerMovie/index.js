@@ -11,6 +11,7 @@ import HomeIcon from "@mui/icons-material/Home";
 const MovieHeader = (props) => {
   const movie = props.movie;
   const favouriteMovies = JSON.parse(localStorage.getItem("favourites")); 
+  const navigate = useNavigate();
 
   const showList = true
 
@@ -26,7 +27,7 @@ const MovieHeader = (props) => {
             margin: 0,
         }}
       >
-      <IconButton aria-label="go back">
+      <IconButton aria-label="go back" onClick={() => navigate(-1)}>
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
 
@@ -55,7 +56,7 @@ favouriteMovies
         <br />
         <span sx={{ fontSize: "1.5rem" }}>{`   "${movie.tagline}"`} </span>
       </Typography>
-      <IconButton aria-label="go forward">
+      <IconButton aria-label="go forward" onClick={() => navigate(+1) } >
         <ArrowForwardIcon color="primary" fontSize="large" />
       </IconButton>
     </Paper>
