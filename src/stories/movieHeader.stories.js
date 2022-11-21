@@ -9,7 +9,7 @@ export default {
   component: MovieHeader,
   decorators: [
     (Story) => <MemoryRouter initialEntries={["/"]}>{Story()}</MemoryRouter>,
-  ],
+  ], // gg
 };
 
 export const Basic = () => <MovieHeader movie={SampleMovie} />;
