@@ -7,13 +7,13 @@ import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import HomeIcon from "@mui/icons-material/Home";
+import { useNavigate } from "react-router-dom";
 
 const MovieHeader = (props) => {
   const movie = props.movie;
   const favouriteMovies = JSON.parse(localStorage.getItem("favourites")); 
   const navigate = useNavigate();
 
-  const showList = true
 
 
   return (
