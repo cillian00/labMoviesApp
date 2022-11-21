@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
+
 export const MoviesContext = React.createContext(null);
 
 const MoviesContextProvider = (props) => {
   const [favourites, setFavourites] = useState( [] )
 
+  const [myReviews, setMyReviews] = useState( {} ) 
   const addToFavourites = (movie) => {
     let newFavourites = [...favourites];
     if (!favourites.includes(movie.id)) {
@@ -20,12 +22,16 @@ const MoviesContextProvider = (props) => {
     ) )
   };
 
+  const addReview = (movie, review) => {
+    setMyReviews( {...myReviews, [movie.id]: review } )
+  };
   return (
     <MoviesContext.Provider
       value={{
         favourites,
         addToFavourites,
-        removeFromFavourites
+        removeFromFavourites,
+        addReview,
       }}
     >
       {props.children}
