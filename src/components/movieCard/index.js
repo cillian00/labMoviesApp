@@ -31,6 +31,46 @@ export default function MovieCard({ movie, action }) {
      addToFavourites(movie);
    };
   return (
+
+
+
+
+//     <div class="card">
+//   <div class="card__inner">
+//     <header class="card__header">
+//       <nav class="card__nav">
+//         <ul class="list list--nav">
+//           <li><a href="#">Movie</a></li>
+//           <li><a href="#">Trivia</a></li>
+//           <li><a href="#">Reviews</a></li>
+//         </ul>
+//       </nav>
+//     </header>
+    
+//     <main class="card__body">
+      
+//       <div class="card__info">
+//         <h1 class="card__title">Captain America: Civil War</h1>
+    
+//         <p class="card__slug">Political interference in the Avengers' activities causes a rift between former allies Captain America and Iron Man.</p>
+      
+//         <button class="card__btn" value="Watch trailer">Watch trailer</button>
+
+//         <div class="card__rating">
+//           8.2
+//         </div>
+//       </div>
+//     </main>
+    
+//     <footer class="card__footer">
+//       <ul class="list list--info">
+//         <li>2016</li>
+//         <li>122 min</li>
+//         <li>Action | Sci-Fi</li>
+//       </ul>
+//     </footer>
+//   </div>
+// </div>
     <Card sx={{ maxWidth: 345 }}>
    <CardHeader
         avatar={

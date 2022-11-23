@@ -5,13 +5,13 @@ import Paper from "@mui/material/Paper";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
+import PlaylistAddIcon from '../components/cardIcons/addToAddList'
 
-const MovieHeader = (props) => {
-  const movie = props.movie;
-  const favouriteMovies = JSON.parse(localStorage.getItem("favourites")); 
+const HeaderTVShow = (props) => {
+  const tvs = props.tvs;
+  const playlists = JSON.parse(localStorage.getItem("playlists")); 
   const navigate = useNavigate();
 
 
@@ -33,20 +33,20 @@ const MovieHeader = (props) => {
 
       <div>
         {
-          movie.favourite ? (
+          tvs.playlists ? (
             <Avatar sx={{ backgroundColor: 'red' }}>
-              <FavoriteIcon />
+              <PlaylistAddIcon />
             </Avatar>
           ) : null
         }
         </div>
       <Typography variant="h4" component="h3">
-        {movie.title}
-        <a href={movie.homepage}>
+        {tvs.title}
+        <a href={tvs.homepage}>
           <HomeIcon color="primary" />
         </a>
         <br />
-        <span sx={{ fontSize: "1.5rem" }}>{`   "${movie.tagline}"`} </span>
+        <span sx={{ fontSize: "1.5rem" }}>{`   "${tvs.tagline}"`} </span>
       </Typography>
       <IconButton aria-label="go forward" onClick={() => navigate(+1) } >
         <ArrowForwardIcon color="primary" fontSize="large" />
@@ -55,4 +55,4 @@ const MovieHeader = (props) => {
   );
 };
 
-export default MovieHeader;
+export default HeaderTVShow;
